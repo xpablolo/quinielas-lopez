@@ -1,4 +1,4 @@
-<img src="https://git.tu-berlin.de/personal-projects-pablo/quinielas-lopez/-/blob/main/static/la-quiniela.png" width="100" height="100">static/la-quiniela.png
+<img src="https://git.tu-berlin.de/personal-projects-pablo/quinielas-lopez/-/blob/main/static/la-quiniela.png">
 <h3 align="center">Quinielas López</h3>
 <p align="center">
   Simple project of Data Extraction, Web Scraping and Web Application in Python developed by me.
