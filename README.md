@@ -1,8 +1,6 @@
 #Quinielas López
+Simple project of Data Extraction, Web Scraping and Web Application in Python developed by me.
 
-<p align="center">
-  Simple project of Data Extraction, Web Scraping and Web Application in Python developed by me.
-</p>
 
 ## Brief description
 Given an Excel document with the weekly predictions of football matches of a group of people, the project automates the process of comparison with the real results extracted from a webpage. The information is shown in a web-app created with Flask and hosted at  <http://pablolo.pythonanywhere.com>.
