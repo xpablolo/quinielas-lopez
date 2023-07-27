@@ -8,8 +8,8 @@ Given an Excel document with the weekly predictions of football matches of a gro
 The project contains hence:
 - A Python script `init.py` which reads the Excel document `datos.xlsx` using _Pandas_ and extracts the information needed from <https://www.quiniela15.com/resultados-quiniela> using _BeautifulSoup_ so the predictions can be validated. The scripts creates lastly an Excel document ´Resultados.xlsx` with the results of the predictions.
 - A Python script `partidos_quiniela.py` which extracts the relevant matches from the same web. This information was not given in the initial Excel document `datos.xlsx`.
-- A Python document ´flask_app.py´ for the initialization of the web using _Flask_.
-- The needed html templates for the web grouped in the repository ´/templates´.
+- A Python document `flask_app.py` for the initialization of the web using _Flask_.
+- The needed html templates for the web grouped in the repository `/templates`.
 
 
 
