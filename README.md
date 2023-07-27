@@ -1,13 +1,4 @@
-<p align="center">
-  <a href="/">
-    <img
-        src="{{ url_for('static', filename='la-quiniela.png')}}"
-        height="70"
-        alt="MDB Logo"
-        loading="lazy"
-      />
-  </a>
-</p>
+![](static/la-quiniela.png)
 <h3 align="center">Quinielas López</h3>
 <p align="center">
   Simple project of Data Extraction, Web Scraping and Web Application in Python developed by me.
