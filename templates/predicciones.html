@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinielas López</title>
+    <!--<link rel="icon" href="{{ url_for('static', filename='la-quiniela.jpg')}}" type="image/jpg">  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" i crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand mt-2 mt-lg-0" href="/">
+      <img
+        src="{{ url_for('static', filename='la-quiniela.png')}}"
+        height="70"
+        alt="MDB Logo"
+        loading="lazy"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/predicciones" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Predicciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/resultados" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Resultados</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Navbar -->
+
+
+<div class="container p-4">
+
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-7 fw-bold">Predicciones</h1>
+          <p class="lead mb-4">Seleccione una jornada disponible de la Temporada 2022/23:</p>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <a class="btn btn-secondary" href="/predicciones/jornada-{{lista_jor[-1]}}" role="button">Jornada {{lista_jor[-1]}}</a>
+      <a class="btn btn-secondary" href="/predicciones/jornada-{{lista_jor[-2]}}" role="button">Jornada {{lista_jor[-2]}}</a>
+
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Otras
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownJornadas">
+            {% for jornada in lista_jor %}
+            <a class="dropdown-item" href="/predicciones/jornada-{{jornada}}" role="button">J. {{jornada}}</a>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+    </div>
+    <a role="button" class="btn btn-primary btn-lg", href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 18">
+            <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+        </svg>
+        Inicio
+    </a>
+  </div>
+</div>
+
+</html>
