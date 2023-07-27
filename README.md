@@ -1,5 +1,5 @@
-<img src="https://git.tu-berlin.de/personal-projects-pablo/quinielas-lopez/-/blob/main/static/la-quiniela.png">
-<h3 align="center">Quinielas López</h3>
+
+#Quinielas López
 <p align="center">
   Simple project of Data Extraction, Web Scraping and Web Application in Python developed by me.
 </p>
