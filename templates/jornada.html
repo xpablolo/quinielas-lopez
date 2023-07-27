@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinielas López</title>
+    <!--<link rel="icon" href="{{ url_for('static', filename='la-quiniela.jpg')}}" type="image/jpg">  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="/">
+          <img
+            src="{{ url_for('static', filename='la-quiniela.png')}}"
+            height="70"
+            alt="MDB Logo"
+            loading="lazy"
+          />
+        </a>
+        <!-- Left links -->
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+              <li class="nav-item">
+                <a class="nav-link" href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/predicciones" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Predicciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/resultados" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Resultados</a>
+              </li>
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+        <!-- Left links -->
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+
+<div class="container p-4">
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-7 fw-bold">Jornada {{jornada}}</h1>
+      <table class="table table-striped-columns">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            {% for col in range(1, sheet.max_column) %}
+            <th scope="col">{{ sheet.cell(1, col+1).value}}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {% for i in range(14) %}
+          <tr>
+            <th scope="row">{{i+1}}. {{ partidos_list[i] }}</th>
+            {% for col in range(2, sheet.max_column +1): %}
+            <td>{{ sheet.cell(index_jornada+1, col).value[i] }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot class="table-group-divider">
+            <tr>
+                <th scope="row">Aciertos totales:</th>
+                {% for i in range(2, resultados.max_column+1): %}
+                <td>{{resultados.cell(index_jornada+1, i).value}}</td>
+                {% endfor %}
+            </tr>
+        </tfoot>
+      </table>
+      <a role="button" class="btn btn-primary btn-lg", href="/predicciones">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 18">
+        <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+        </svg>
+        Atrás
+        </a>
+    </div>
+  </div>
+</div>
+
+</html>
